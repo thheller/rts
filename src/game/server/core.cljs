@@ -65,11 +65,9 @@
       (assoc :passport passport)
       component/start)))
 
-(defn -main
+(defn main
   []
   (println "Main")
   (with-simple-cause #(swap! system component/stop-system))
   (with-simple-cause #(swap! system component/start-system)))
 
-(-main)
-(set! *main-cli-fn* -main)
